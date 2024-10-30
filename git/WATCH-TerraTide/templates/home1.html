@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heat Map</title>
+</head>
+<body>
+    <h1>Crowdsourced Community Heat Map</h1>
+    <div>{{ map_html|safe }}</div>
+    <a href="{{ url_for('submit') }}">Submit Heat Index Data</a>
+</body>
+</html>
+

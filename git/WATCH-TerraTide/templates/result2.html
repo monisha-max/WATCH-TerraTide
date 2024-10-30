@@ -1,0 +1,182 @@
+<!-- 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Green Space Optimization Results</title>
+     <style>
+         body {
+             font-family: Arial, sans-serif;
+             background-color: #f5f5f5;
+             color: #333;
+             margin: 20px;
+         }
+         .container {
+             max-width: 800px;
+             margin: 0 auto;
+             padding: 20px;
+             background-color: white;
+             border-radius: 10px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         }
+         h1 {
+             text-align: center;
+             color: #4CAF50;
+         }
+         h2 {
+             margin-top: 20px;
+             color: #4CAF50;
+         }
+         p {
+             font-size: 1.2em;
+         }
+         ul {
+             list-style-type: none;
+             padding: 0;
+         }
+         ul li {
+             background-color: #f0f0f0;
+             margin: 5px 0;
+             padding: 10px;
+             border-radius: 5px;
+         }
+         .suggestions {
+             background-color: #e7f9e7;
+             padding: 10px;
+             border-radius: 5px;
+             margin-top: 20px;
+         }
+         .suggestions ul {
+             list-style-type: disc;
+             margin-left: 20px;
+         }
+         .suggestions ul li {
+             font-size: 1.1em;
+             color: #2d7d2d;
+         }
+     </style>
+ </head>
+ <body>
+ 
+     <div class="container">
+         <h1>Green Space Optimization Results</h1>
+ 
+         <p><strong>Site Area needed for green infrastructure</strong> {{ green_space_percentage }}%</p>
+         <h2>Current On-Site Air quality</h2>
+         <p><strong>Air Quality Index (AQI) Value:</strong> {{ aqi_value }}</p>
+         <p><strong>Air Quality (PM2.5):</strong> {{ air_quality['pm2_5'] }}</p>
+        <p><strong>Air Quality (PM10):</strong> {{ air_quality['pm10'] }}</p>
+        <p><strong>CO Level:</strong> {{ air_quality['co'] }}</p>
+        <p><strong>NO2 Level:</strong> {{ air_quality['no2'] }}</p>
+        <p><strong>O3 Level:</strong> {{ air_quality['o3'] }}</p>
+ 
+         <h2>Plant Suggestions</h2>
+         <ul>
+             {% for plant in plants %}
+                 <li>{{ plant }}</li>
+             {% endfor %}
+         </ul>
+ 
+         <h2>Alternate Green Space Optimization Suggestions</h2>
+         <div class="suggestions">
+             <ul>
+                 {% for suggestion in openai_suggestions.split('\n') %}
+                     <li>{{ suggestion }}</li>
+                 {% endfor %}
+             </ul>
+         </div>
+     </div>
+ 
+ </body>
+ </html> -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Space Optimization Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        h2 {
+            margin-top: 20px;
+            color: #4CAF50;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: #f0f0f0;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .suggestions {
+            background-color: #e7f9e7;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .suggestions ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .suggestions ul li {
+            font-size: 1.1em;
+            color: #2d7d2d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Green Space Optimization Results</h1>
+        <p><strong>Site Area needed for green infrastructure</strong> {{ green_space_percentage }}%</p>
+        <h2>Current On-Site Air quality</h2>
+        <p><strong>Air Quality Index (AQI) Value:</strong> {{ aqi_value }}</p>
+        <p><strong>Air Quality (PM2.5):</strong> {{ air_quality['pm2_5'] }}</p>
+       <p><strong>Air Quality (PM10):</strong> {{ air_quality['pm10'] }}</p>
+       <p><strong>CO Level:</strong> {{ air_quality['co'] }}</p>
+       <p><strong>NO2 Level:</strong> {{ air_quality['no2'] }}</p>
+       <p><strong>O3 Level:</strong> {{ air_quality['o3'] }}</p>
+
+        <h2>Plant Suggestions</h2>
+        <ul>
+            {% for plant in plants %}
+                <li>{{ plant }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Alternate Green Space Optimization Suggestions</h2>
+        <div class="suggestions">
+            <ul>
+                {% for suggestion in openai_suggestions.split('\n') %}
+                    <li>{{ suggestion }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

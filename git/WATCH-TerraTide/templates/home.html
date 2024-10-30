@@ -1,0 +1,227 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Heat Tolerance Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+        input[type="text"], input[type="email"], select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="text"]:focus, input[type="email"]:focus, select:focus {
+            border-color: #66afe9;
+            outline: none;
+        }
+        select {
+            height: auto;
+        }
+        #other_health_condition {
+            display: none;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function showOtherHealthCondition() {
+            const healthSelect = document.getElementById('health_conditions');
+            const otherHealthInput = document.getElementById('other_health_condition');
+            if (Array.from(healthSelect.selectedOptions).some(option => option.value === 'Other')) {
+                otherHealthInput.style.display = 'block';
+            } else {
+                otherHealthInput.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <form method="POST" action="/">
+        <h1>Register for Heat Tolerance Alerts</h1>
+        <label for="age">Age:</label>
+        <input type="text" name="age" id="age" required>
+
+        <label for="health_conditions">Health Conditions:</label>
+        <select name="health_conditions[]" id="health_conditions" multiple onchange="showOtherHealthCondition()" required>
+            <option value="None">None</option>
+            <option value="High Blood Pressure">High Blood Pressure</option>
+            <option value="Diabetes">Diabetes</option>
+            <option value="Heart Disease">Heart Disease</option>
+            <option value="Asthma">Asthma</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <div id="other_health_condition">
+            <label for="other_health_condition_input">Please specify other health condition:</label>
+            <input type="text" name="other_health_condition_input" id="other_health_condition_input">
+        </div>
+
+        <label for="activity_level">Activity Level (low/medium/high):</label>
+        <input type="text" name="activity_level" id="activity_level" required>
+
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city" required>
+
+        <label for="email">Email (for alerts):</label>
+        <input type="email" name="email" id="email" required>
+
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Heat Tolerance Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+        input[type="text"], input[type="email"], select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="text"]:focus, input[type="email"]:focus, select:focus {
+            border-color: #66afe9;
+            outline: none;
+        }
+        #other_health_condition {
+            display: none;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .checkbox-group {
+            margin-top: 10px;
+        }
+        .checkbox-group label {
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        function showOtherHealthCondition() {
+            const otherHealthInput = document.getElementById('other_health_condition');
+            const otherCheckbox = document.getElementById('other_health_condition_checkbox');
+            if (otherCheckbox.checked) {
+                otherHealthInput.style.display = 'block';
+            } else {
+                otherHealthInput.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <form method="POST" action="/">
+        <h1>CLIMABOT - TERRATIDE</h1>
+        <label for="age">Age:</label>
+        <input type="text" name="age" id="age" required>
+
+        <label>Health Conditions:</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="health_conditions[]" value="None"> None</label>
+            <label><input type="checkbox" name="health_conditions[]" value="High Blood Pressure"> High Blood Pressure</label>
+            <label><input type="checkbox" name="health_conditions[]" value="Diabetes"> Diabetes</label>
+            <label><input type="checkbox" name="health_conditions[]" value="Heart Disease"> Heart Disease</label>
+            <label><input type="checkbox" name="health_conditions[]" value="Asthma"> Asthma</label>
+            <label><input type="checkbox" name="health_conditions[]" value="Cardiovascular disease"> Cardiovascular disease</label>
+            <label><input type="checkbox" name="health_conditions[]" value="Cerebrovascular diseases"> Cerebrovascular diseases</label>
+            <label><input type="checkbox" name="health_conditions[]" value="Chronic kidney conditions"> Chronic kidney conditions</label>
+            <label><input type="checkbox" name="health_conditions[]" value="Mental health illness or disorders"> Mental health illness or disorders</label>
+            <label><input type="checkbox" name="health_conditions[]" value="Hypertension"> Hypertension</label>
+            <label><input type="checkbox" name="health_conditions[]" value="Other" id="other_health_condition_checkbox" onchange="showOtherHealthCondition()"> Other</label>
+        </div>
+
+        <div id="other_health_condition">
+            <label for="other_health_condition_input">Please specify other health condition:</label>
+            <input type="text" name="other_health_condition_input" id="other_health_condition_input">
+        </div>
+
+        <label for="activity_level">Activity Level (low/medium/high):</label>
+        <input type="text" name="activity_level" id="activity_level" required>
+
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city" required>
+
+        <label for="email">Email (for alerts):</label>
+        <input type="email" name="email" id="email" required>
+
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

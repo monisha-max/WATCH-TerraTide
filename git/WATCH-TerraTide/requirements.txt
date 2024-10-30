@@ -1,0 +1,11 @@
+langchain  # No strict version to allow compatible dependencies
+langchain-core>=0.3  # Allow for compatibility with langchain-openai
+langchain-openai  # Latest version will be installed automatically
+python-dotenv==1.0.0
+streamlit==1.22.0
+unstructured==0.9.2
+tiktoken>=0.7  # Ensure compatibility with langchain-openai
+faiss-cpu==1.7.4
+libmagic==1.0
+python-magic==0.4.27
+openai>=1.40.0,<2.0.0  # To match langchain-openai requirements
