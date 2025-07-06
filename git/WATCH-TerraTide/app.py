@@ -35,8 +35,8 @@ conversation_collection = db['conversations']
 # --------------------------
 # API Keys
 # --------------------------
-WEATHER_API_KEY = '9790d903731d40fdae150122243112'
-openai.api_key = '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'
+WEATHER_API_KEY = 'WEATHER_API_KEY_HERE'
+openai.api_key = 'OPEN_API_KEY_HERE'
 
 # --------------------------
 # FAISS Index Persistence
